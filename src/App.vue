@@ -1,47 +1,77 @@
-<script setup>
-import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
-</script>
-
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
-
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
+  <div class="container">
+    <header>
+      <h1>Quizzes</h1>
+      <input type="text" placeholder="Search..." />
+    </header>
+    <div class="cards-container">
+      <div class="card">
+        <img
+          src="https://schoolsweek.co.uk/wp-content/uploads/2021/12/Maths-feat.jpg"
+          alt="Picture of maths calculations"
+        />
+        <div class="card-text">
+          <h2>Subject</h2>
+          <p>15 questions</p>
+        </div>
+      </div>
     </div>
-  </header>
-
-  <main>
-    <TheWelcome />
-  </main>
+  </div>
 </template>
 
 <style scoped>
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
 header {
-  line-height: 1.5;
+  margin-bottom: 0.625em;
+  margin-top: 1.875em;
+  display: flex;
+  align-items: center;
 }
 
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
+header h1 {
+  font-weight: bold;
+  margin-right: 1.875em;
 }
 
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
+header input {
+  border: none;
+  background: rgba(128, 128, 128, 0.1);
+  padding: 0.625em;
+  border-radius: 0.313em;
+}
 
-  .logo {
-    margin: 0 2rem 0 0;
-  }
+.cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 2.5em;
+}
 
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
+/* CARD */
+.card {
+  width: 310px;
+  overflow: hidden;
+  border-radius: 2%;
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2em;
+  margin-right: 1.25em;
+  cursor: pointer;
+}
+
+.card img {
+  width: 100%;
+  height: 190px;
+  margin: 0;
+}
+
+.card .card-text {
+  padding: 0 0.375em 0.375em;
+}
+
+.card .card-text h2 {
+  font-weight: bold;
 }
 </style>
